@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: ['master']
+    branches: ['main']
   pull_request:
-    branches: ['master']
+    branches: ['main']
 
 jobs:
   build:
@@ -20,5 +20,4 @@ jobs:
         run: docker build -t ${{secrets.DOCKER_USER}}/muhammednode .
                  
       - name: Docker Push
-        run: docker push ${{secrets.DOCKER_USER}}/muhammednode
-        
+        run: docker push ${{secrets.DOCKER_USER}}/muhammednode        
